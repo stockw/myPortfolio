@@ -1,28 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Switch } from 'react-router-dom'
+import { Router, Route } from 'react-router';
+import Header from './components/Header/';
+import About from './components/About';
+import Projects from './components/Projects';
+import Resume from './components/Resume';
+import Contact from './components/Contact';
 import './App.css';
 
+
+
 function App() {
-  const testFunction = async () => {
-    const response = await fetch('/test_route')
-  }
-  testFunction()
+  // const testFunction = async () => {
+  //   const response = await fetch('/test_route')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* <div className="App"> */}
+        <Header />
+        <Switch>
+          <Route exact path="/about" components={About} />
+          <Route exact path="/projects" components={Projects} />
+          <Route exact path="/resume" components={Resume} />
+          <Route exact path="/contact" Components={Contact} />
+        </Switch>
+      {/* </div> */}
+    </Router>
   );
 }
 
