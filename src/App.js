@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom'
+// import { Switch } from 'react-router-dom'
 import { Router, Route } from 'react-router';
 import Header from './components/Header/';
 import About from './components/About';
@@ -17,12 +17,12 @@ function App() {
     <Router>
       {/* <div className="App"> */}
         <Header />
-        <Switch>
+        {/* <Switch> */}
           <Route exact path="/about" components={About} />
           <Route exact path="/projects" components={Projects} />
           <Route exact path="/resume" components={Resume} />
           <Route exact path="/contact" Components={Contact} />
-        </Switch>
+        {/* </Switch> */}
       {/* </div> */}
     </Router>
   );
